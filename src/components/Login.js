@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
 import api from '../services/api';
+import Swal from 'sweetalert2';
 import { AuthContext } from '../context/AuthContext'; // Importe o AuthContext
 import { maskCPF, isValidDate, isStrongPassword } from '../utils/utils';
 import { HTTP_STATUS } from '../utils/httpStatusCodes';
@@ -71,7 +72,12 @@ const Login = () => {
       const response = await api.post('api/registrar', { cpf, senha, nome, data_nascimento });
 
       if (response.status === HTTP_STATUS.CREATED) {
-        alert('Cadastro realizado com sucesso!');
+        Swal.fire({
+          title: 'Sucesso!',
+          text: 'Cadastro realizado com sucesso!',
+          icon: 'success',
+          confirmButtonText: 'Ok'
+        });
         setIsSignup(false);
         setSignupError('');
       } else {
