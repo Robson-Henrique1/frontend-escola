@@ -43,7 +43,3 @@ Certifique-se de que o backend está em execução e acessível na URL especific
 ## 📄 Licença
 
 Este projeto é licenciado sob a [MIT License](LICENSE).
-
-## 📞 Contato
-
-Se você tiver alguma dúvida ou sugestão, entre em contato pelo e-mail: [seuemail@example.com](mailto:seuemail@example.com).
